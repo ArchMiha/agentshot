@@ -482,7 +482,7 @@ async function run() {
 	if (command.name === 'auth') {
 		printMessage(
 			command.json,
-			'AgentScreenshots is free and open source. It needs no account and no license key, so there is nothing to authenticate.'
+			'agentshot is free and open source. It needs no account and no license key, so there is nothing to authenticate.'
 		);
 		return;
 	}
@@ -490,7 +490,7 @@ async function run() {
 	if (command.name === 'logout') {
 		printMessage(
 			command.json,
-			'AgentScreenshots is free and open source. It keeps no account or license key, so there is nothing to log out of.'
+			'agentshot is free and open source. It keeps no account or license key, so there is nothing to log out of.'
 		);
 		return;
 	}

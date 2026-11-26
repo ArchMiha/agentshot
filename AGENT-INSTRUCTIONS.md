@@ -1,4 +1,4 @@
-# AgentScreenshots CLI agent instructions
+# agentshot agent instructions
 
 Use `agentshot` for rendered webpage screenshots and visual UI checks. It is free, runs entirely on this machine with a local browser, and needs no account, license key, or network access of its own.
 
