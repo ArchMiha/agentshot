@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>AgentScreenshots Accordion Fixture</title>
+	<style>
+		* { box-sizing: border-box; }
+		body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #f7faf8; font-family: Inter, ui-sans-serif, system-ui, sans-serif; color: #17201c; }
+		#accordion-lab { width: min(880px, calc(100% - 36px)); border: 1px solid #dfe7e2; border-radius: 18px; background: white; padding: 30px; }
+		.row { border-top: 1px solid #dfe7e2; padding: 18px 0; }
+		button { width: 100%; border: 0; background: transparent; color: #17201c; display: flex; justify-content: space-between; font-size: 18px; font-weight: 800; text-align: left; }
+		.panel { display: none; margin-top: 12px; color: #63706a; line-height: 1.6; }
+		.row.open .panel { display: block; }
+	</style>
+</head>
+<body>
+	<section id="accordion-lab">
+		<h1>Collapsed content capture</h1>
+		<div class="row">
+			<button id="security-toggle">Security notes <span>+</span></button>
+			<div class="panel">This hidden panel opens before capture when the agent passes <code>--click "#security-toggle"</code>.</div>
+		</div>
+		<div class="row">
+			<button id="billing-toggle">Billing notes <span>+</span></button>
+			<div class="panel">Multiple click flags can open several collapsed regions before the screenshot.</div>
+		</div>
+	</section>
+	<script>
+		for (const button of document.querySelectorAll('button')) {
+			button.addEventListener('click', () => button.closest('.row').classList.toggle('open'));
+		}
+	</script>
+</body>
+</html>

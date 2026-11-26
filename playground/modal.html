@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>AgentScreenshots Modal Fixture</title>
+	<style>
+		* { box-sizing: border-box; }
+		body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #f7faf8; font-family: Inter, ui-sans-serif, system-ui, sans-serif; color: #17201c; }
+		#modal-lab { position: relative; width: min(900px, calc(100% - 36px)); min-height: 460px; border: 1px solid #dfe7e2; border-radius: 18px; background: white; padding: 34px; overflow: hidden; }
+		button { border: 0; border-radius: 10px; background: #11834f; color: white; padding: 10px 14px; font-weight: 700; }
+		.modal { position: absolute; inset: 80px 40px auto auto; width: min(360px, calc(100% - 80px)); border: 1px solid #9ed0b7; border-radius: 16px; background: #eef8f3; padding: 22px; box-shadow: 0 24px 70px rgba(20, 30, 25, .18); }
+		.hidden { display: none; }
+	</style>
+</head>
+<body>
+	<section id="modal-lab">
+		<h1>Modal and popup capture</h1>
+		<p>Use click selectors to close a visible popup or open hidden UI before capture.</p>
+		<button id="open-modal">Open modal</button>
+		<div class="modal" id="modal">
+			<h2>Visible popup</h2>
+			<p>This popup can be dismissed with <code>--click-if-present "#close-modal"</code>.</p>
+			<button id="close-modal">Close</button>
+		</div>
+	</section>
+	<script>
+		const params = new URLSearchParams(location.search);
+		const modal = document.querySelector('#modal');
+		if (params.has('closed')) modal.classList.add('hidden');
+		document.querySelector('#close-modal').addEventListener('click', () => modal.classList.add('hidden'));
+		document.querySelector('#open-modal').addEventListener('click', () => modal.classList.remove('hidden'));
+	</script>
+</body>
+</html>

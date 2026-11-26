@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<style>
+		body { margin: 0; font-family: Inter, ui-sans-serif, system-ui, sans-serif; color: #17201c; }
+		.banner { height: 190px; border: 1px solid #9ed0b7; border-radius: 16px; background: white; padding: 18px; }
+		button { border: 0; border-radius: 10px; background: #11834f; color: white; padding: 10px 14px; font-weight: 800; }
+	</style>
+</head>
+<body>
+	<div class="banner" id="cookie-banner">
+		<h2>Cookie banner</h2>
+		<p>Dismiss this frame-mounted overlay with a pre-capture click.</p>
+		<button id="reject-cookies" onclick="document.querySelector('#cookie-banner').remove()">Reject all</button>
+	</div>
+</body>
+</html>

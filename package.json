@@ -1,0 +1,56 @@
+{
+	"name": "agentscreenshots",
+	"version": "0.3.0",
+	"description": "Free, local website screenshots for AI coding agents.",
+	"type": "module",
+	"homepage": "https://github.com/ArchMiha/agentshot",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ArchMiha/agentshot.git"
+	},
+	"bugs": {
+		"url": "https://github.com/ArchMiha/agentshot/issues"
+	},
+	"bin": {
+		"agentshot": "dist/index.js"
+	},
+	"files": [
+		"dist",
+		"scripts/postinstall.js",
+		"playground",
+		"README.md",
+		"AGENT-INSTRUCTIONS.md",
+		"LICENSE"
+	],
+	"scripts": {
+		"build": "tsc -p tsconfig.json",
+		"check": "tsc -p tsconfig.json --noEmit",
+		"dev": "tsx src/index.ts",
+		"postinstall": "node scripts/postinstall.js",
+		"prepublishOnly": "npm run check && npm run build"
+	},
+	"keywords": [
+		"agents",
+		"ai-agents",
+		"screenshots",
+		"playwright",
+		"cli",
+		"localhost",
+		"offline"
+	],
+	"license": "MIT",
+	"publishConfig": {
+		"access": "public"
+	},
+	"dependencies": {
+		"playwright": "^1.60.0"
+	},
+	"devDependencies": {
+		"@types/node": "^25.7.0",
+		"tsx": "^4.21.0",
+		"typescript": "^6.0.3"
+	},
+	"engines": {
+		"node": ">=20"
+	}
+}
