@@ -11,13 +11,13 @@ It is free and open source under the MIT license. There is no account, no licens
 You need Node.js 20 or newer on macOS, Linux or Windows/WSL.
 
 ```bash
-npm install -g agentshot
+npm install -g agentscreenshots
 ```
 
 This installs the `agentshot` command. During install it looks for Chrome or Chromium on your machine and uses it if it finds one. If it finds none, it downloads Playwright Chromium, and that download is the only thing it fetches. To skip that step:
 
 ```bash
-AGENTSHOT_SKIP_BROWSER_INSTALL=1 npm install -g agentshot
+AGENTSHOT_SKIP_BROWSER_INSTALL=1 npm install -g agentscreenshots
 agentshot install-browser   # later, if no system browser is found
 ```
 
@@ -26,7 +26,7 @@ To use a specific browser, set `AGENTSHOT_BROWSER_PATH` to its executable.
 ## Update
 
 ```bash
-npm install -g agentshot@latest
+npm install -g agentscreenshots@latest
 ```
 
 ## Usage
@@ -71,13 +71,11 @@ agentshot feedback          where to report bugs and ideas
 
 ## Upgrading from 0.2
 
-Up to 0.2 the package was called `agentscreenshots` (AgentScreenshots, a paid service). It is now just `agentshot`. Both install the same `agentshot` command, so remove the old one first:
+Up to 0.2 the tool was AgentScreenshots, a paid service. It is now called agentshot and is free; the npm package keeps its original name, `agentscreenshots`. Update in place:
 
 ```bash
-npm uninstall -g agentscreenshots
-npm install -g agentshot
+npm install -g agentscreenshots@latest
 ```
-
 
 Version 0.3 removed licensing, usage reporting and the sign-in commands. The old flags `--no-report`, `--api-url` and `--license-key` are still accepted and ignored, so saved commands keep working. The first run deletes the old usage queue at `~/.config/agentshot/usage-queue.jsonl`. You can delete `~/.config/agentshot/config.json` too, since nothing reads it any more.
 
@@ -86,7 +84,7 @@ Version 0.3 removed licensing, usage reporting and the sign-in commands. The old
 The package ships a few offline test pages (modal, accordion, hover states, cookie banner, a tall page) under `playground/`:
 
 ```bash
-PLAYGROUND_DIR="$(npm root -g)/agentshot/playground"
+PLAYGROUND_DIR="$(npm root -g)/agentscreenshots/playground"
 python3 -m http.server 5197 --bind 127.0.0.1 --directory "$PLAYGROUND_DIR"
 agentshot "http://127.0.0.1:5197/" ".agents/screenshots/playground.png" --scroll
 ```

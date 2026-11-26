@@ -1,5 +1,5 @@
 {
-	"name": "agentshot",
+	"name": "agentscreenshots",
 	"version": "0.3.0",
 	"description": "Free, local website screenshots for AI coding agents.",
 	"type": "module",
